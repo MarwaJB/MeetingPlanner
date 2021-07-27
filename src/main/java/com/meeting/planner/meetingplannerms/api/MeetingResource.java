@@ -1,8 +1,6 @@
 package com.meeting.planner.meetingplannerms.api;
 
 import com.meeting.planner.meetingplannerms.dto.MeetingDto;
-import com.meeting.planner.meetingplannerms.entity.Meeting;
-import com.meeting.planner.meetingplannerms.entity.Room;
 import com.meeting.planner.meetingplannerms.service.MeetingService;
 import javassist.NotFoundException;
 import lombok.AllArgsConstructor;
@@ -26,14 +24,13 @@ public class MeetingResource {
     public final MeetingService meetingService;
 
     @PostMapping(path = "/v1/meetings")
-    ResponseEntity<MeetingDto> reserveRoom(@RequestBody MeetingDto meetingDto) throws NotFoundException {
+    ResponseEntity<MeetingDto> reserveRoom(@RequestBody MeetingDto meetingDto) {
         log.info("reserve meeting");
 
-        MeetingDto savedMeetingDto =  meetingService.createMeeting(meetingDto);
-        if (Objects.isNull(savedMeetingDto)){
+        MeetingDto savedMeetingDto = meetingService.createMeeting(meetingDto);
+        if (Objects.isNull(savedMeetingDto)) {
             return ResponseEntity.notFound().build();
         }
-
         final URI location = ServletUriComponentsBuilder.fromCurrentServletMapping().path("/api/v1/meetings/{id}").build().expand(savedMeetingDto.getId()).toUri();
         return ResponseEntity.created(location).body(savedMeetingDto);
 

@@ -13,7 +13,6 @@ import java.util.List;
 public interface MeetingRepository extends JpaRepository<Meeting, Long> {
 
     @Query(value = "SELECT M FROM Meeting M WHERE M.day=:date and M.startTime=:time ")
-
     List<Meeting> findMeetingByTime(LocalDate date, LocalTime time);
 
 }
