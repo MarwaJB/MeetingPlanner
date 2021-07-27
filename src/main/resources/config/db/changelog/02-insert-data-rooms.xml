@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+    <changeSet id="02" author="jebrimarwa" >
+        <comment>Inserting Rooms </comment>
+
+        <insert tableName="room">
+            <column name="name" value="E1001"   />
+            <column name="capacity" value="23" />
+            <column name="equipments" value="" />
+        </insert>
+
+        <insert tableName="room">
+            <column name="name" value="E1002"   />
+            <column name="capacity" value="10" />
+            <column name="equipments" value="ECRAN" />
+        </insert>
+
+        <insert tableName="room">
+            <column name="name" value="E1003"   />
+            <column name="capacity" value="8" />
+            <column name="equipments" value="PIEUVRE" />
+        </insert>
+
+        <insert tableName="room">
+            <column name="name" value="E1004"   />
+            <column name="capacity" value="4" />
+            <column name="equipments" value="TABLEAU" />
+        </insert>
+
+        <insert tableName="room">
+            <column name="name" value="E2001"   />
+            <column name="capacity" value="4" />
+            <column name="equipments" value="" />
+        </insert>
+
+        <insert tableName="room">
+            <column name="name" value="E2002"   />
+            <column name="capacity" value="15" />
+            <column name="equipments" value="ECRAN,WEBCAM" />
+        </insert>
+
+        <insert tableName="room">
+            <column name="name" value="E2003"   />
+            <column name="capacity" value="7" />
+            <column name="equipments" value="" />
+        </insert>
+
+        <insert tableName="room">
+            <column name="name" value="E2004"   />
+            <column name="capacity" value="9" />
+            <column name="equipments" value="TABLEAU" />
+        </insert>
+
+        <insert tableName="room">
+            <column name="name" value="E3001"   />
+            <column name="capacity" value="13" />
+            <column name="equipments" value="ECRAN,WEBCAM,PIEUVRE" />
+        </insert>
+
+        <insert tableName="room">
+            <column name="name" value="E3002"   />
+            <column name="capacity" value="8" />
+            <column name="equipments" value="" />
+        </insert>
+
+        <insert tableName="room">
+            <column name="name" value="E3003"   />
+            <column name="capacity" value="9" />
+            <column name="equipments" value="ECRAN,PIEUVRE" />
+        </insert>
+
+        <insert tableName="room">
+            <column name="name" value="E3004"   />
+            <column name="capacity" value="4" />
+            <column name="equipments" value="" />
+        </insert>
+
+
+    </changeSet>
+
+</databaseChangeLog>
